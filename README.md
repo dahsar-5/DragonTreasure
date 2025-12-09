@@ -1,10 +1,12 @@
-1. Syfte och mål
+Syfte och mål
+   
 Syftet med denna uppgift är att designa grundstrukturen för ett textbaserat äventyrsspel där spelaren med hjälp av de olika väderstrecken ska kunna navigera mellan olika rum i en grotta.
 Spelaren ska även i varje rum få en textsträng som informerar spelaren om i vilket rum denne befinner sig, samt även en rumsbeskrivning och vilka riktningar man kan välja att förflytta sig i för att fortsätta spelet.
  Målet med uppgiften är att få en grundläggande förståelse för objektorienterad programmering och hur man går tillväga för att utveckla en god datastruktur.
 
 
-3. Beskrivning
+Beskrivning
+
 Dragon Treasure är ett textbaserat äventyrsspel skriven i Java. Spelaren utforskar en grotta med olika rum, dörrar och en skattkista.
 Målet är att navigera genom rummen, hantera låsta dörrar och hitta utgången.
 Spelet startar med att spelaren väljer ett namn och därefter kan spelaren navigera genom spelet genom olika rum i de fyra väderstrecken med kommandona “N”, “V”, “S” och “Ö”.
@@ -20,6 +22,8 @@ Door – representerar en dörr med riktning (direction), vilket rum den leder t
 
 I arbetet så har vi valt att använda oss av Netbeans då vi kände att detta var ett bra alternativ då det är de programmet som använts under föreläsningarna. 
 
-3. Förbättringar och utveckling
+
+Förbättringar och utveckling
+
 Vidareutveckling av spelet framöver innefattar bland annat att spelaren ska kunna hantera föremål, låsa upp låsta dörrar och hantera strider med monster.
 Detta för att skapa en mer komplett spelupplevelse för spelaren. För att kunna utveckla spelet med dessa framtida krav så behöver nuvarande metoder kollas över, samt kommer vi även behöva lägga till nya metoder och klasser för att bygga ut systemet för att nå slutgiltigt resultat.
