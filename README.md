@@ -5,6 +5,8 @@ Spelaren ska även i varje rum få en textsträng som informerar spelaren om i v
  Målet med uppgiften är att få en grundläggande förståelse för objektorienterad programmering och hur man går tillväga för att utveckla en god datastruktur.
 
 
+
+
 Beskrivning
 
 Dragon Treasure är ett textbaserat äventyrsspel skriven i Java. Spelaren utforskar en grotta med olika rum, dörrar och en skattkista.
@@ -21,6 +23,8 @@ Player – lagrar spelarens namn med konstruktor och getter.
 Door – representerar en dörr med riktning (direction), vilket rum den leder till (leadsTo)  och om den är låst (locked). Klassen har getters och setters för att hantera dessa värden.
 
 I arbetet så har vi valt att använda oss av Netbeans då vi kände att detta var ett bra alternativ då det är de programmet som använts under föreläsningarna. 
+
+
 
 
 Förbättringar och utveckling
