@@ -1,3 +1,6 @@
+DragonTreasure
+
+
 Syfte och mål
    
 Syftet med denna uppgift är att designa grundstrukturen för ett textbaserat äventyrsspel där spelaren med hjälp av de olika väderstrecken ska kunna navigera mellan olika rum i en grotta.
@@ -31,3 +34,8 @@ Förbättringar och utveckling
 
 Vidareutveckling av spelet framöver innefattar bland annat att spelaren ska kunna hantera föremål, låsa upp låsta dörrar och hantera strider med monster.
 Detta för att skapa en mer komplett spelupplevelse för spelaren. För att kunna utveckla spelet med dessa framtida krav så behöver nuvarande metoder kollas över, samt kommer vi även behöva lägga till nya metoder och klasser för att bygga ut systemet för att nå slutgiltigt resultat.
+
+
+Ingela Petersson inepet-0@student.ltu.se
+Sara Dahlberg Christensen dahsar-5@student.ltu.se
+Sara Rosenqvist sarroa-5@student.ltu.se
