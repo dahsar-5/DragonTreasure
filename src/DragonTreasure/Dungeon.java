@@ -18,7 +18,7 @@ public class Dungeon {
         Room dödKropp = new Room("Du ser en död kropp på golvet.");
         Room bergrum = new Room("Du kommer in i ett rymligt bergrum med en ljusstrimma sipprandes genom en spricka i den östra väggen.");
         Room fackla = new Room("Du ser en brinnande fackla i rummets ena hörn och känner en motbjudande stank.");
-        Room ut = new Room("UTGÅNG: Du lämnar grottan med livet i behåll. Grattis, du förlorade inte!");
+        Room ut = new Room("Grattis du står utanför grottan med livet i behåll!");
         Room fuktig = new Room("Du kommer in i ett fuktigt rum med vatten sipprandes längs den västra väggen. "
             + "Du ser en låst dörr i öster [Ö].");
         Room skattkista = new Room("Du ser en skattkista full med guld.");
