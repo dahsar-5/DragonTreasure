@@ -13,6 +13,6 @@ public class Weapon extends Item {
     public void use(Player player) {
         int newDamage = player.getDamage() * damageMultiplier;
         player.setDamage(newDamage);
-        System.out.println("Du lyfter upp " + getName() + "! Din skada är nu" + newDamage + ".");
+        System.out.println("Du lyfter upp " + getName() + "! Din skada är nu " + newDamage + ".");
     }
 }
