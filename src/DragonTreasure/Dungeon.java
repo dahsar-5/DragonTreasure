@@ -17,7 +17,7 @@ public class Dungeon {
 
         // Skapa monster
          dragon = new Monster("Drake", 15, 2, "En enorm drake dyker upp och står framför och vaktar skatten!");
-         Monster ork = new Monster("Ork", 5, 1, "En riktigt ful ork kommer fram ur mörkret, med blod rundt hela munnen");
+         Monster ork = new Monster("Ork", 5, 1, "En riktigt ful ork kommer fram ur mörkret, med blod runt hela munnen");
         
         // skapa objekt/instanser av items 
          Potion potion = new Potion("Hälsodryck", "En magisk dryck som återställer hälsa.", 5);
@@ -26,7 +26,7 @@ public class Dungeon {
     
         
         // Skapa rummen med tillhörande beskrivning
-        Room grotta = new Room("Du är inne i grottan och du ser den kollapsade ingången bredvid dig. "
+        Room grotta = new Room("Du är inne i grottan och du ser den kollapsade ingången bakom dig. "
             + "Rummet är upplyst av några ljus som sitter på ett bord framför dig.");
         grotta.addItem(key);
 
@@ -87,7 +87,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
    
    if (room.getMonster() != null && room.getMonster().isAlive()) { //Monstret är inte null (finns i rummet) & lever
     System.out.println(room.getMonster().getDescription());  // monsterbeskrivning skrivs ut
-    room.doBattle(player, room.getMonster()); //Strid, anrpotar konstruktor?
+    room.doBattle(player, room.getMonster()); //Strid, anropar konstruktor?
 }
 
     // Om spelaren dog i striden, avbryt
