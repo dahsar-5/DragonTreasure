@@ -37,19 +37,18 @@ public class Dungeon {
         Room fackla = new Room("Du ser en brinnande fackla i rummets ena hörn.");
         fackla.addItem(potion);
 
-       
-        Room ut = new Room("Grattis du står utanför grottan med livet i behåll!");
+                                                                                                          //Tagit bort rum ut
         Room fuktig = new Room("Du kommer in i ett fuktigt rum med vatten sipprandes längs den västra väggen. "
             + "Du ser en låst dörr i öster [Ö].");
         
          skattkista = new Room("Du ser en skattkista full med guld.", dragon);
+         skattkista.setEndRoom(true);                                                                    //JUSTERAT
     
         // Lägg alla rum i ArrayList
         rooms.add(grotta);
         rooms.add(dödKropp);
         rooms.add(bergrum);
-        rooms.add(fackla);
-        rooms.add(ut);
+        rooms.add(fackla);                                                                              //Tagit bort rum ut
         rooms.add(fuktig);
         rooms.add(skattkista);
 
@@ -60,8 +59,7 @@ public class Dungeon {
         dödKropp.addDoor(new Door("Ö", fackla, false));
         dödKropp.addDoor(new Door("S", grotta, false));
 
-        fackla.addDoor(new Door("V", dödKropp, false));
-        fackla.addDoor(new Door("Ö", ut, false));
+        fackla.addDoor(new Door("V", dödKropp, false));                                      //tagit bort koppling till ut rum
         fackla.addDoor(new Door("S", fuktig, false));
 
         bergrum.addDoor(new Door("N", grotta, false));
@@ -70,11 +68,8 @@ public class Dungeon {
         fuktig.addDoor(new Door("N", fackla, false));
         fuktig.addDoor(new Door("V", bergrum, false));
         fuktig.addDoor(new Door("Ö", skattkista, true)); 
-
-        skattkista.addDoor(new Door("V", bergrum, false));
-        skattkista.addDoor(new Door("N", fackla, false));
-
-        ut.addDoor(new Door("V", fackla, false));
+                                                                                      // tagit bort all navigering ut ur skattrum
+                                                                                      // JUSTERAT tagit bort ut rum
 
         // Spelet startar i grottan
         currentRoom = grotta;
@@ -88,6 +83,11 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
    if (room.getMonster() != null && room.getMonster().isAlive()) { //Monstret är inte null (finns i rummet) & lever
     System.out.println(room.getMonster().getDescription());  // monsterbeskrivning skrivs ut
     room.doBattle(player, room.getMonster()); //Strid, anropar konstruktor?
+}
+   
+   if (room.isEndRoom() && room.getMonster() != null && !room.getMonster().isAlive()) {                     //Tillagt 87-90
+    endGame();
+    return;
 }
 
     // Om spelaren dog i striden, avbryt
@@ -117,13 +117,16 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         }
     }
 
-    // Visa dörrar (om spelaren lever)
-    room.showDoors();
-}
+    // Visa dörrar (om spelaren lever OM det inte är slutrum)                                 //JUSTERAT 120-123
+        if (!room.isEndRoom()) {
+            room.showDoors();
+        }
+    }
 
  public void playGame() { //Metod för att spela spelet
     Scanner input = new Scanner(System.in); //Läser in från spelaren
     String direction = ""; //En tom sträng
+    
 
     // Visa första rummet som är grottan
     enterRoom(currentRoom, input);
@@ -135,20 +138,19 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         // Flytta spelaren
         currentRoom = currentRoom.move(direction, player); //använder move metod, anropar konstruktor & metod?
 
-        // Kör enterRoom efter flytten om spelaren lever och om det finns items visas det med
-        if (player.isAlive()) {
-            enterRoom(currentRoom, input);
-        }
-        
-        if (currentRoom == skattkista && !dragon.isAlive()) { //avslutar spelet om man är i skattkiste rummet och draken är besegrad
-    endGame();
-}
+                                                                                                        // JUSTERAT  141-150
+            if (currentRoom.isEndRoom() && !dragon.isAlive()) {
+                endGame();
+                return;
+            }
 
+            if (player.isAlive()) {
+                enterRoom(currentRoom, input);
+            }
+        }
     }
-}
 
 public void endGame() { //metod för att avsluta spelet 
     System.out.println(player.getName() + " du lämnar grottan med skatten. Grattis, du vann!");
     System.exit(0); } //inbyggt java-kommando 
 }
-
