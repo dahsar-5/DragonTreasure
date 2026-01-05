@@ -1,5 +1,7 @@
 package DragonTreasure;
 
+import java.util.ArrayList;
+
 public class Player {
     private String name;   // Instansvariabel: lagrar spelarens namn
     private int health;    // Instansvariabel: lagrar spelarens hälsopoäng
