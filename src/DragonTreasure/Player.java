@@ -5,6 +5,27 @@ public class Player {
     private int health;    // Instansvariabel: lagrar spelarens hälsopoäng
     private int damage;    // Instansvaraiabel: lagrar spelarens skada
     private int heal;      //Instansvaraiabel: lagrar spelarens läkning
+    private ArrayList<Item> inventory = new ArrayList<>(); //Arraylist för spelarens inventory (Ryggsäck)
+
+
+    //Metoder för inventory/Ryggsäcken
+    public void addToInventory(Item item) {
+    inventory.add(item);
+    System.out.println(item.getName() + " har lagts i din ryggsäck.");
+}
+
+     public void showInventory() {
+       if (inventory.isEmpty()) {
+        System.out.println("Din ryggsäck är tom.");
+        return;
+    }
+
+    System.out.println("I din ryggsäck finns:");
+    for (Item item : inventory) {
+        System.out.println("- " + item.getName());
+    }
+}
+
     
     // Konstruktor: används när man skapar en ny Player
     public Player(String name, int health, int damage, int heal) {
