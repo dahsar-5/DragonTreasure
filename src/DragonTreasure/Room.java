@@ -7,7 +7,7 @@ public class Room {
     private ArrayList<Door> doors = new ArrayList<>(); //Array list för doors 
     private Monster monster; //Deklarerar monster
     private ArrayList<Item> items = new ArrayList<>(); // En array list för item
-    private boolean endRoom = false;                                                      //JUSTERAT  11-19
+    private boolean endRoom = false;                                                      
 
     public boolean isEndRoom() {
            return endRoom;
