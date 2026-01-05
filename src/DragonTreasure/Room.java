@@ -7,7 +7,16 @@ public class Room {
     private ArrayList<Door> doors = new ArrayList<>(); //Array list för doors 
     private Monster monster; //Deklarerar monster
     private ArrayList<Item> items = new ArrayList<>(); // En array list för item
-    
+    private boolean endRoom = false;                                                      //JUSTERAT  11-19
+
+    public boolean isEndRoom() {
+           return endRoom;
+    }
+
+    public void setEndRoom(boolean endRoom) {
+          this.endRoom = endRoom;
+    }
+
 
     public Room(String description) { //Konstruktor för room om monster inte finns
         this.description = description;
