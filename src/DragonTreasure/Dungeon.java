@@ -37,18 +37,18 @@ public class Dungeon {
         Room fackla = new Room("Du ser en brinnande fackla i rummets ena hörn.");
         fackla.addItem(potion);
 
-                                                                                                          //Tagit bort rum ut
+                                                                                                        
         Room fuktig = new Room("Du kommer in i ett fuktigt rum med vatten sipprandes längs den västra väggen. "
             + "Du ser en låst dörr i öster [Ö].");
         
          skattkista = new Room("Du ser en skattkista full med guld.", dragon);
-         skattkista.setEndRoom(true);                                                                    //JUSTERAT
+         skattkista.setEndRoom(true);                                                                
     
         // Lägg alla rum i ArrayList
         rooms.add(grotta);
         rooms.add(dödKropp);
         rooms.add(bergrum);
-        rooms.add(fackla);                                                                              //Tagit bort rum ut
+        rooms.add(fackla);                                                                              
         rooms.add(fuktig);
         rooms.add(skattkista);
 
@@ -59,7 +59,7 @@ public class Dungeon {
         dödKropp.addDoor(new Door("Ö", fackla, false));
         dödKropp.addDoor(new Door("S", grotta, false));
 
-        fackla.addDoor(new Door("V", dödKropp, false));                                      //tagit bort koppling till ut rum
+        fackla.addDoor(new Door("V", dödKropp, false));                                     
         fackla.addDoor(new Door("S", fuktig, false));
 
         bergrum.addDoor(new Door("N", grotta, false));
@@ -68,8 +68,8 @@ public class Dungeon {
         fuktig.addDoor(new Door("N", fackla, false));
         fuktig.addDoor(new Door("V", bergrum, false));
         fuktig.addDoor(new Door("Ö", skattkista, true)); 
-                                                                                      // tagit bort all navigering ut ur skattrum
-                                                                                      // JUSTERAT tagit bort ut rum
+                                                                                   
+                                                                                     
 
         // Spelet startar i grottan
         currentRoom = grotta;
@@ -85,7 +85,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
     room.doBattle(player, room.getMonster()); //Strid, anropar konstruktor?
 }
    
-   if (room.isEndRoom() && room.getMonster() != null && !room.getMonster().isAlive()) {                     //Tillagt 87-90
+   if (room.isEndRoom() && room.getMonster() != null && !room.getMonster().isAlive()) {                    
     endGame();
     return;
 }
@@ -118,7 +118,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         }
     }
 
-    // Visa dörrar (om spelaren lever OM det inte är slutrum)                                 //JUSTERAT 120-123
+    // Visa dörrar (om spelaren lever OM det inte är slutrum)                                
         if (!room.isEndRoom()) {
             room.showDoors();
         }
@@ -154,7 +154,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         // Flytta spelaren
         currentRoom = currentRoom.move(direction, player); //använder move metod, anropar konstruktor & metod?
 
-                                                                                                        // JUSTERAT  141-150
+                                                                                                     
             if (currentRoom.isEndRoom() && !dragon.isAlive()) {
                 endGame();
                 return;
