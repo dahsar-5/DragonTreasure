@@ -109,8 +109,9 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
             String choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("ja")) {
-                room.removeItem(item);
-                item.use(player);
+                player.addToInventory(item);  // lägg i ryggsäcken
+                item.use(player);             // använd item 
+                room.removeItem(item);         // ta bort från rummet
             } else {
                 System.out.println("Du lämnar " + item.getName() + " kvar.");
             }
@@ -126,15 +127,29 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
  public void playGame() { //Metod för att spela spelet
     Scanner input = new Scanner(System.in); //Läser in från spelaren
     String direction = ""; //En tom sträng
-    
+    String command = ""; // En tom sträng för olika kommandon
 
     // Visa första rummet som är grottan
     enterRoom(currentRoom, input);
 
-    while (!direction.equalsIgnoreCase("quit") && player.isAlive()) { //skriver spelaren inte quit och spelaren lever
-        System.out.println("Skriv 'quit' för att avsluta:"); //så skrivs möjligheten att avsluta spelen med "quit" ut
-        direction = input.nextLine(); //Hämtar nextline/sträng från spelaren
-
+  while (player.isAlive()) { //medan spelaren lever
+        System.out.println("Skriv 'Ryggsäck' för att se vad som är i din ryggsäck, eller 'quit' för att avsluta:");  
+       command = input.nextLine(); //Hämtar sträng från spelaren som är ett kommando
+       
+        
+        if (command.equalsIgnoreCase("ryggsäck")) { 
+            player.showInventory(); 
+        continue; //Gör att man kommer tillbaka till while 
+        } 
+        
+     
+       if (command.equalsIgnoreCase("quit")) { 
+    System.out.println("Spelet avslutas..."); 
+    break; 
+         } 
+        
+       direction = command; //Om command inte är något av det ovanför är det en direction
+       
         // Flytta spelaren
         currentRoom = currentRoom.move(direction, player); //använder move metod, anropar konstruktor & metod?
 
