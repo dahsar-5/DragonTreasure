@@ -139,6 +139,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         
         if (command.equalsIgnoreCase("ryggsäck")) { 
             player.showInventory(); 
+            enterRoom(currentRoom, input); 
         continue; //Gör att man kommer tillbaka till while 
         } 
         
