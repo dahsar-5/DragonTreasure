@@ -34,7 +34,7 @@ public class Player {
         this.name = name;      // "this.name" syftar på klassens variabel, "name" är parametern
         this.health = health;  
         this.damage = damage; 
-        this.heal = heal;      //att läka
+        this.heal = heal;   
     }
 
     // Getter: hämtar spelarens namn
@@ -44,7 +44,7 @@ public class Player {
     
     //metod för att läka spelaren med en potion
     public void heal(int amount) {
-    health += amount; // samma som health = health + amount 
+    health += amount; 
     System.out.println(name + "s hälsa är nu " + health); 
 }
 
@@ -58,7 +58,6 @@ public class Player {
     }
    
     
-    // Getter: hämtar nuvarande damage?? Behövs den?
     public int getDamage() {
         return damage;
     }
