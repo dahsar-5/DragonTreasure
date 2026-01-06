@@ -132,9 +132,9 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
     // Visa första rummet som är grottan
     enterRoom(currentRoom, input);
 
-  while (player.isAlive()) { //medan spelaren lever
-        System.out.println("Skriv 'Ryggsäck' för att se vad som är i din ryggsäck, eller 'quit' för att avsluta:");  
-       command = input.nextLine(); //Hämtar sträng från spelaren som är ett kommando
+ while (player.isAlive()) { //medan spelaren lever
+        System.out.println("Skriv 'Ryggsäck' för att se vad som är i din ryggsäck");  
+        command = input.nextLine(); //Hämtar sträng från spelaren som är ett kommando
        
         
         if (command.equalsIgnoreCase("ryggsäck")) { 
