@@ -109,8 +109,8 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
             String choice = input.nextLine();
 
             if (choice.equalsIgnoreCase("ja")) {
-                player.addToInventory(item);  // lägg i ryggsäcken
                 item.use(player);             // använd item 
+                player.addToInventory(item);  // lägg i ryggsäcken
                 room.removeItem(item);         // ta bort från rummet
             } else {
                 System.out.println("Du lämnar " + item.getName() + " kvar.");

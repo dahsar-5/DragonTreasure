@@ -1,0 +1,4 @@
+WARNING: package com.apple.eio not in java.desktop
+WARNING: package jdk.internal.opt not in jdk.internal.opt
+WARNING: package com.sun.java.swing.plaf.windows not in java.desktop
+WARNING: package com.apple.laf not in java.desktop

@@ -18,7 +18,7 @@ public class Item {
     public String getDescription() {
         return description;
     }
-    // Basmetod som kan override av subklasserna?
+    
     public void use(Player player) {
         System.out.println("Du använder " + name + ".");}
 }

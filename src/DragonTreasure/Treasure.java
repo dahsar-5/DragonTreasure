@@ -2,17 +2,13 @@
 package DragonTreasure;
 
 
-public class Treasure {
+public class Treasure extends Item{
     private String description;
     private String name;
 
 public Treasure(String name, String description) {
-    this.name = name;
-    this.description = description;    
+   super(name, description); // anropa Item-konstruktorn
+        this.name = name;
+        this.description = description;    
 }
 }
-
-//@override //Denna behövs nog inte då endgame har beskrivning för detta
-// public void use(Player player) {
-//        System.out.println("Du plockar upp " + getName() + " och blir rik!");
-// }

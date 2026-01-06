@@ -13,6 +13,6 @@ public class Potion extends Item { //potion är en subclass til item
    //@override
     public void use(Player player) {
         System.out.println("Du dricker " + getName() + " och återfår " + heal + " hälsa!");
-        player.heal(heal); // Player har en heal-metod men varför (heal) hur funkar denna
+        player.heal(heal); // Player har en heal-metod 
     }
 }

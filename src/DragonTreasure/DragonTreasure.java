@@ -29,7 +29,6 @@ public class DragonTreasure {
 
 
 
-
        Dungeon dungeon = new Dungeon(player);   // skapa spelvärlden med spelaren
        dungeon.playGame();                // starta spelet
     }

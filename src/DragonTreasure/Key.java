@@ -1,28 +1,28 @@
 
 package DragonTreasure;
 
-public class Key extends Item { //Detta är en subklass til item, då använder man extend
-    private boolean usable; //Boolean för nyckel, deklarerar datayp och variabel
+public class Key extends Item {  //Nyckel är en subklass til item
+    private boolean usable; 
 
     public Key(String name, String description, boolean usable) { 
-        super(name, description); //super används för att anropa items konstruktor?
+        super(name, description); 
         this.usable = usable;
     }
 
-    public boolean isUsable() { //Är detta som en getter? Hur funkar is här?
+    public boolean isUsable() { 
         return usable;
     }
 
-    public void setUsable(boolean usable) { //en setter för usable av nyckeln, om den går att använda?
+    public void setUsable(boolean usable) { 
         this.usable = usable;
     }
 
    @Override
 public void use(Player player) {
     if (usable) {
-        System.out.println("Du plockar upp nyckeln " + getName() + ".");
-        player.giveKey();   //varför används give här??
-        usable = false;     // Vad betyder detta?
+        System.out.println("Du kan nu använda " + getName() + "n för att låsa upp en dörr.");
+        player.giveKey();   
+        usable = false;    
     }
 }
 
