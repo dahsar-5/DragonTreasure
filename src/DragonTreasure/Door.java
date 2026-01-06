@@ -25,7 +25,7 @@ package DragonTreasure;
     this.locked = locked;
     }           
     
-    public boolean isLocked() { //Vad kallar man detta, en getter för att låsa eller låsa upp? Vad ör funktionaliteten?
+    public boolean isLocked() { 
     return locked;
 }
 
