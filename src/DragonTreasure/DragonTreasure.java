@@ -19,12 +19,14 @@ public class DragonTreasure {
       Player player = new Player(playerName, playerHealth, playerDamage, playerHeal);
 
 
-     // Skriv ut en hälsning och spelets startbeskrivning, samt spelarens stats
+ // Skriv ut en hälsning och spelets startbeskrivning, samt spelarens stats
         System.out.println("Välkommen, " + player.getName() + " till din skattjakt. Akta dig för draken!");
+        System.out.println("Skriv 'quit' för att avsluta spelet innan du är ute ur grottan.");
         System.out.println("Du står utanför en grotta. Det luktar svavel från öppningen");
         System.out.println(player.getName() + " du startar med  " + player.getHealth() + " hälsopoäng och gör " 
     + player.getDamage() + " i skada. Äventyret börjar nu... " +
     "När du går in i grottan kollapsar ingången bakom dig");
+
 
 
 
