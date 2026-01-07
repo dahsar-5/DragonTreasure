@@ -10,6 +10,8 @@ public class Dungeon {
     private Player player; 
     private Room skattkista; //Deklarerar rummet som sedan är med i endGame
     private Monster dragon;
+    private Treasure treasure; //deklarerar skatten som är med i endGame
+
 
     public Dungeon(Player player) { //konstruktor 
         this.player = player; 
@@ -23,6 +25,7 @@ public class Dungeon {
          Potion potion = new Potion("Hälsodryck", "En magisk dryck som återställer hälsa.", 5);
          Key key = new Key ("Nyckel", "En stor tung gammal nyckel.", true);
          Weapon sword = new Weapon ("Svärd", "Svärdet är gammalt, glansigt och tungt", 4);
+        treasure = new Treasure ("Skatt", "skatten");
     
         
         // Skapa rummen med tillhörande beskrivning
@@ -164,6 +167,6 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
     }
 
 public void endGame() { //metod för att avsluta spelet 
-    System.out.println(player.getName() + " du lämnar grottan med skatten. Grattis, du vann!");
+    System.out.println(player.getName() + " du lämnar grottan med " + treasure.getDescription() + " Grattis, du vann!");
     System.exit(0); } //inbyggt java-kommando 
 }
