@@ -11,7 +11,7 @@ public class Item {
         this.description = description;
     }
 
-    public String getName() {
+    public String getName() { 
         return name;
     }
 
@@ -19,7 +19,7 @@ public class Item {
         return description;
     }
     
-    public void use(Player player) {
+    public void use(Player player) { //Basmetod som kan överskrivas av subklasserna
         System.out.println("Du använder " + name + ".");}
 }
 
