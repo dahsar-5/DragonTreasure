@@ -76,16 +76,13 @@ public class Dungeon {
     }
 
 public void enterRoom(Room room, Scanner input) { //metod för när man går in i ett rum
-
-    // Monsterattack direkt när man går in, går att ha efter rumsbeskrivning 
-    //men eftersom det sker av sig själv i detta spelet känns det naturligt att ha beskrivningen efter?
-   
-   if (room.getMonster() != null && room.getMonster().isAlive()) { //Monstret är inte null (finns i rummet) & lever
-    System.out.println(room.getMonster().getDescription());  // monsterbeskrivning skrivs ut
-    room.doBattle(player, room.getMonster()); //Strid, anropar konstruktor?
+   //möter ett monster i första rummet
+   if (room.getMonster() != null && room.getMonster().isAlive()) { 
+    System.out.println(room.getMonster().getDescription());  
+    room.doBattle(player, room.getMonster());
 }
-   
-   if (room.isEndRoom() && room.getMonster() != null && !room.getMonster().isAlive()) {                    
+    //testar om spelare är i ett senario där spel ska avslutas med metod endGame()
+   if (room.isEndRoom() && room.getMonster() != null && !room.getMonster().isAlive()) {                 
     endGame();
     return;
 }
@@ -154,7 +151,7 @@ public void enterRoom(Room room, Scanner input) { //metod för när man går in 
         // Flytta spelaren
         currentRoom = currentRoom.move(direction, player); //använder move metod, anropar konstruktor & metod?
 
-                                                                                                     
+             //testar om spelare i ett senario där spel ska avslutas                                                                                  
             if (currentRoom.isEndRoom() && !dragon.isAlive()) {
                 endGame();
                 return;
