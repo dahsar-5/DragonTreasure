@@ -7,18 +7,10 @@ public class Room {
     private ArrayList<Door> doors = new ArrayList<>(); //Array list för doors 
     private Monster monster; //Deklarerar monster
     private ArrayList<Item> items = new ArrayList<>(); // En array list för item
-    private boolean endRoom = false;                                                      
+    private boolean endRoom = false;    //Boolean för att markera om man är i endRoom                                                  
 
-    public boolean isEndRoom() {
-           return endRoom;
-    }
-
-    public void setEndRoom(boolean endRoom) {
-          this.endRoom = endRoom;
-    }
-
-
-    public Room(String description) { //Konstruktor för room om monster inte finns
+    //Konstruktor för room om monster inte finns
+    public Room(String description) { 
         this.description = description;
         this.monster = null;
     }
@@ -30,12 +22,12 @@ public class Room {
     }
 
     // Lägg till ett item i rummet
-    public void addItem(Item item) { //lägger til items 
+    public void addItem(Item item) { 
         items.add(item);
     }
 
     // Hämta alla items i rummet
-    public ArrayList<Item> getItems() { //getter för array item
+    public ArrayList<Item> getItems() { 
         return items;
     }
 
@@ -43,7 +35,8 @@ public class Room {
     public void removeItem(Item item) {
         items.remove(item);
     }
-    public void addDoor(Door door) { //Lägga til en dörr
+    //Lägga til en dörr
+    public void addDoor(Door door) {
         doors.add(door);
     }
 
@@ -56,6 +49,13 @@ public class Room {
     public Monster getMonster() {
         return monster;
     }
+        public boolean isEndRoom() {
+           return endRoom;
+    }
+
+    public void setEndRoom(boolean endRoom) {
+          this.endRoom = endRoom;
+    }
 
     // Metod för att visa dörrar
     public void showDoors() {
@@ -64,11 +64,11 @@ public class Room {
             System.out.println("- " + d.getDirection()); //Skriver ut - och hämtar direction från door klassen?
         }
     }
-
-    public Room move(String direction, Player player) { //här är metoden för move 
+     //här är metoden för move
+    public Room move(String direction, Player player) { 
 
     // Leta efter dörren i den valda riktningen
-    for (Door d : doors) { //är Door d ett sätt att förkorta Door till bara d, eller varför skriver man så?
+    for (Door d : doors) { 
         if (d.getDirection().equalsIgnoreCase(direction)) {
 
             // om dörren är låst
@@ -86,7 +86,7 @@ public class Room {
         }
     }
 
-    //Om ingen dörr hittades, hur funkar denna kodbiten? Hur vet den att ingen dörr hittas?
+    //Om ingen dörr hittades
     System.out.println("Ingen dörr åt det hållet!");
     return this;
 }
