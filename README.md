@@ -1,3 +1,8 @@
+Java del 2 - Grupp 4
+
+Sara Dahlberg Christensen dahsar-5@student.ltu.se, Ingela Petersson inepet-0@student.ltu.se, Sara Rosenqvist sarroa-5@student.ltu.se 
+
+
 1. Syfte och mål
 Syftet med denna uppgift är att fortsätta utveckla äventyrsspel där spelaren med hjälp av de olika väderstrecken ska kunna navigera mellan olika rum i en grotta. Navigeringen gjordes i uppgift 1. I uppgift 2 har vi vidareutvecklat spelet med fler funktioner och spelmöjligheter, där vi bland annat använt oss av arv och polymorfism. Däribland att låta spelaren hantera att plocka upp saker och slåss mot monster. För att klara det här behöver koden utvecklas med fler klasser och metoder.  Målet med uppgiften är att få en djupare förståelse för objektorienterad programmering och hur man går tillväga för att utveckla en god datastruktur. 
 
